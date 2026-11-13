@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daksh Chandola | CV</title>
+
+<style>
+/* ---------- GLOBAL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #172033;
+    --blue: #315f9c;
+    --light-blue: #eaf0f8;
+    --text: #343b49;
+    --muted: #6b7280;
+    --border: #e2e6ec;
+    --background: #f4f6fa;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.65;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 750;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-right a:hover {
+    color: var(--blue);
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.container {
+    max-width: 1050px;
+    margin: 35px auto 60px;
+    padding: 55px 65px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(20, 35, 60, 0.06);
+}
+
+/* ---------- HEADER ---------- */
+.hero {
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-label {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1.5px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    letter-spacing: -1.8px;
+    color: var(--dark);
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin-top: 18px;
+    font-size: 13px;
+}
+
+.contact a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+    margin-top: 34px;
+}
+
+.section-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    font-weight: 800;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.section-title::after {
+    content: "";
+    height: 1px;
+    background: var(--border);
+    flex: 1;
+}
+
+/* ---------- EDUCATION ---------- */
+.education-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.education-card h3 {
+    font-size: 15px;
+    color: var(--dark);
+}
+
+.education-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.edu-right {
+    text-align: right;
+    min-width: 150px;
+}
+
+.edu-right strong {
+    font-size: 13px;
+    color: var(--dark);
+}
+
+/* ---------- PROJECTS ---------- */
+.project {
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: 0.25s ease;
+}
+
+.project:hover {
+    border-color: #b4c7e2;
+    box-shadow: 0 7px 20px rgba(40, 75, 120, 0.07);
+    transform: translateY(-2px);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.project h3 {
+    color: var(--dark);
+    font-size: 15px;
+}
+
+.date {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.project ul {
+    padding-left: 19px;
+}
+
+.project li {
+    font-size: 13px;
+    margin-bottom: 7px;
+    color: var(--text);
+}
+
+.project li::marker {
+    color: var(--blue);
+}
+
+strong {
+    color: var(--dark);
+}
+
+.project-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ---------- CERTIFICATIONS ---------- */
+.cert-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.cert-card {
+    padding: 17px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #fafbfd;
+}
+
+.cert-card h3 {
+    font-size: 13px;
+    color: var(--dark);
+}
+
+.cert-card p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* ---------- EXTRA CURRICULAR ---------- */
+.activity {
+    margin-bottom: 23px;
+}
+
+.activity h3 {
+    font-size: 14px;
+    color: var(--dark);
+}
+
+.activity-sub {
+    font-size: 12px;
+    color: var(--blue);
+    font-weight: 600;
+    margin: 4px 0 7px;
+}
+
+.activity p {
+    font-size: 13px;
+    color: var(--text);
+    padding-left: 15px;
+}
+
+/* ---------- SKILLS ---------- */
+.skills-box {
+    padding: 20px 22px;
+    background: #f8fafd;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.skill-row {
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.skill-row:last-child {
+    margin-bottom: 0;
+}
+
+.skill-row strong {
+    color: var(--blue);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    text-align: center;
+    padding: 10px 20px 35px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ---------- PRINT BUTTON ---------- */
+.print-btn {
+    background: var(--dark);
+    color: white;
+    padding: 11px 19px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 650;
+    border: none;
+    cursor: pointer;
+}
+
+.print-btn:hover {
+    background: var(--blue);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 700px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .nav-right {
+        gap: 12px;
+    }
+
+    .container {
+        margin: 15px 12px 35px;
+        padding: 30px 22px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .education-card {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .edu-right {
+        text-align: left;
+    }
+
+    .cert-list {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        padding: 16px;
+    }
+
+    .project-header {
+        flex-direction: column;
+        gap: 3px;
+    }
+}
+
+/* ---------- PRINT / PDF ---------- */
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    body {
+        background: white;
+        font-size: 10pt;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .navbar, footer, .print-btn {
+        display: none !important;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .project {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+
+    .section {
+        break-inside: auto;
+    }
+
+    .cert-card, .skills-box {
+        break-inside: avoid;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="logo">Daksh<span>.</span></div>
+
+    <div class="nav-right">
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <button class="print-btn" onclick="window.print()">
+            Download CV
+        </button>
+    </div>
+</nav>
+
+<main class="container">
+
+    <!-- HEADER -->
+    <header class="hero">
+        <div class="hero-label">Data Science & Analytics</div>
+
+        <h1>Daksh <span>Chandola</span></h1>
+
+        <p>
+            Finance Enthusiast | Financial Modeling |
+            Equity Research | Data Analytics
+        </p>
+
+        <div class="contact">
+            <span>📍 South Extension, Delhi</span>
+            <span>📞 +91-9634298279</span>
+            <span>✉️ 1725151@svc.du.ac.in</span>
+            <a href="#" target="_blank">LinkedIn ↗</a>
+        </div>
+    </header>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-card">
+            <div>
+                <h3>Sri Venkateswara College, University Of Delhi</h3>
+                <p>Bachelor of Science (Honours) in Mathematics</p>
+                
+            </div>
+
+            <div class="edu-right">
+                <strong>Delhi, India</strong>
+                <p>Expected May 2028</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <article class="project">
+            <div class="project-header">
+                <h3>Financial Modeling & Valuation – Asian Paints Ltd.</h3>
+                <span class="date">June, 2026</span>
+            </div>
+
+            <ul>
+                <li>
+                    Constructed a fully dynamic, 3-statement integrated
+                    financial model linking the Income Statement,
+                    Balance Sheet, and Cash Flow Statement across a
+                    <strong>5-year historical and 5-year projection horizon.</strong>
+                </li>
+
+                <li>
+                    Conducted an independent audit of the model and
+                    identified and corrected <strong>5 structural errors</strong>,
+                    including a CAPM cost-of-equity formula error,
+                    a mismatched LTM (trailing-twelve-month) calculation,
+                    and a <strong>5-year data-source misalignment</strong>
+                    in the cash flow statement.
+                </li>
+
+                <li>
+                    Built a bottom-up WACC of <strong>17.4%</strong>
+                    using CAPM and peer-beta analysis across
+                    <strong>6 comparable companies</strong>, and performed
+                    a two-stage Unlevered FCFF DCF valuation with
+                    Gordon Growth terminal value to derive an implied
+                    share price of <strong>₹443</strong>, a
+                    <strong>~83% variance</strong> against the prevailing
+                    market price of ₹2,652.
+                </li>
+            </ul>
+        </article>
+
+        <article class="project">
+            <div class="project-header">
+                <h3>Equity Research One-Pager – SBI Cards & Payment Services Ltd.</h3>
+                <span class="date">July, 2026</span>
+            </div>
+
+            <ul>
+                <li>
+                    Formulated an institutional-grade, single-page
+                    company profile evaluating historical financial
+                    metrics, valuation multiples, and capital structure
+                    across a <strong>5-year trend line (FY22–FY26).</strong>
+                </li>
+
+                <li>
+                    Analyzed profitability and margin trends, tracking
+                    <strong>10.10% YoY growth in Total Sales ₹19,900 Cr</strong>
+                    and a <strong>13% YoY increase in PAT to ₹2,167 Cr</strong>,
+                    against a backdrop of Net Profit Margin compression
+                    from 15.13% to 10.89%.
+                </li>
+
+                <li>
+                    Applied lending-business-specific metrics beyond
+                    standard profitability ratios, including
+                    <strong>Net Interest Margin (expanded 31 bps to 11.2%)</strong>,
+                    Capital Adequacy Ratio (24.4%, well above the 15%
+                    regulatory mandate), and a rising Cost-to-Income
+                    ratio (55.3%) signaling margin pressure from retail
+                    acquisition spend.
+                </li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section">
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="cert-list">
+
+            <div class="cert-card">
+                <h3>Complete Python Bootcamp & Automation</h3>
+                <p>CodeWithHarry | October, 2025</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Data Science & AI Certification</h3>
+                <p>CodeWithHarry | July, 2026</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXTRA CURRICULAR -->
+    <section class="section">
+        <h2 class="section-title">Extra-Curricular Activities</h2>
+
+        <div class="activity">
+            <h3>
+                Member of Research Department -
+                The BlueChip, Finance & Investment Club,
+                Sri Venkateswara College
+            </h3>
+        </div>
+
+        <div class="activity">
+            <h3>Publication: The Evolution of AI in Quantitative Finance</h3>
+            <div class="activity-sub">April, 2026</div>
+
+            <p>
+                Provides a detailed analysis of the role of artificial
+                intelligence in quantitative finance, focusing on how
+                data-driven models, machine learning, and algorithmic
+                systems are transforming investment strategies.
+            </p>
+        </div>
+
+        <div class="activity">
+            <h3>Publication: Sector Initiative – Indian Wealth Management Industry</h3>
+            <div class="activity-sub">June, 2026</div>
+
+            <p>
+                This research report analyses the global and Indian
+                asset management industry, focusing on how Asset
+                Management Companies (AMCs) function, generate profits,
+                and adapt to evolving financial markets. It explores
+                key industry segments including active and passive
+                investing, product mix and investment management processes.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-box">
+
+            <div class="skill-row">
+                <strong>Technical Skills:</strong>
+                Financial Modeling, SQL, Python, Power BI, Tableau,
+                Valuation (DCF, Comparable Companies), Financial
+                Statement Analysis, Excel (VLOOKUP, Index/Match,
+                Pivot Tables), PowerPoint.
+            </div>
+
+            <div class="skill-row">
+                <strong>Financial Databases:</strong>
+                Screener.in, Yahoo Finance, Investing.com,
+                Prime Investors, MySQL.
+            </div>
+
+            <div class="skill-row">
+                <strong>Interests:</strong>
+                Value Investing, Corporate History, Football,
+                Tracking the NIFTY 50 Index.
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Gaurav Ray. All rights reserved.
+</footer>
+
+</body>
+</html>
